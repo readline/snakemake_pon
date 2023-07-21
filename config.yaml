@@ -1,0 +1,26 @@
+workdir:
+    /data/RUNX1/project/1.FPDMM/01.WES/PoN/230614
+    
+bamsubfolder:
+    bam
+
+references:
+    fasta:     /data/RUNX1/pipeline/wgs_germline/ref/gatk_bundle_hg38_v0/Homo_sapiens_assembly38.fasta
+    fastafai:  /data/RUNX1/pipeline/wgs_germline/ref/gatk_bundle_hg38_v0/Homo_sapiens_assembly38.fasta.fai
+    fastadict: /data/RUNX1/pipeline/wgs_germline/ref/gatk_bundle_hg38_v0/Homo_sapiens_assembly38.dict
+    wxsbed:    /data/yuk5/pipeline/wxs_phase1/ref/IDT_xGen_Exome_Research_Panel/hg38/xGen_Exome_Research_Panel.targets.hg38.bed
+    flankbed:  /data/yuk5/pipeline/wxs_phase1/ref/IDT_xGen_Exome_Research_Panel/hg38/xGen_Exome_Research_Panel.targets.withflank150.hg38.bed
+    interval: 17
+    
+modules:
+    singularity: singularity
+simg:
+    gatk:   https://depot.galaxyproject.org/singularity/gatk4%3A4.2.0.0--hdfd78af_1
+    cnvkit: https://depot.galaxyproject.org/singularity/cnvkit%3A0.9.8--py_0
+    bedtools: https://depot.galaxyproject.org/singularity/bedtools%3A2.31.0--hf5e1c6e_2
+max-jobs-per-second: 2
+latency-wait: 120
+keep-going: true
+
+# singularity
+singularity: singularity exec -B /data,/vf,/gs9,/gpfs,/fdb,/spin1,/lscratch

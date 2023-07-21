@@ -1,0 +1,5 @@
+__default__:
+    partition: norm
+    time: '2-00:00:00'
+    mem: 16
+    extra: "--gres=lscratch:20"
